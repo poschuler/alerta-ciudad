@@ -1,0 +1,35 @@
+[02-Dec-2012 07:10:42] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'betodl_ultimo'@'localhost' (using password: YES) in /home/betodl/public_html/alerta/conexion.php on line 6
+[02-Dec-2012 07:10:42] PHP Warning:  mysql_select_db() [<a href='function.mysql-select-db'>function.mysql-select-db</a>]: Access denied for user 'betodl'@'localhost' (using password: NO) in /home/betodl/public_html/alerta/conexion.php on line 7
+[02-Dec-2012 07:10:42] PHP Warning:  mysql_select_db() [<a href='function.mysql-select-db'>function.mysql-select-db</a>]: A link to the server could not be established in /home/betodl/public_html/alerta/conexion.php on line 7
+[02-Dec-2012 07:10:51] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'betodl_ultimo'@'localhost' (using password: YES) in /home/betodl/public_html/alerta/conexion.php on line 6
+[02-Dec-2012 07:10:51] PHP Warning:  mysql_select_db() [<a href='function.mysql-select-db'>function.mysql-select-db</a>]: Access denied for user 'betodl'@'localhost' (using password: NO) in /home/betodl/public_html/alerta/conexion.php on line 7
+[02-Dec-2012 07:10:51] PHP Warning:  mysql_select_db() [<a href='function.mysql-select-db'>function.mysql-select-db</a>]: A link to the server could not be established in /home/betodl/public_html/alerta/conexion.php on line 7
+[02-Dec-2012 07:11:03] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'betodl_ultimo'@'localhost' (using password: YES) in /home/betodl/public_html/alerta/conexion.php on line 6
+[02-Dec-2012 07:11:03] PHP Warning:  mysql_select_db() [<a href='function.mysql-select-db'>function.mysql-select-db</a>]: Access denied for user 'betodl'@'localhost' (using password: NO) in /home/betodl/public_html/alerta/conexion.php on line 7
+[02-Dec-2012 07:11:03] PHP Warning:  mysql_select_db() [<a href='function.mysql-select-db'>function.mysql-select-db</a>]: A link to the server could not be established in /home/betodl/public_html/alerta/conexion.php on line 7
+[02-Dec-2012 07:21:36] PHP Parse error:  syntax error, unexpected T_ENDWHILE in /home/betodl/public_html/alerta/index_other.php on line 1
+[02-Dec-2012 07:22:17] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/betodl/public_html/alerta/index_other.php on line 50
+[02-Dec-2012 07:22:27] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/betodl/public_html/alerta/index_other.php on line 50
+[02-Dec-2012 07:23:50] PHP Parse error:  syntax error, unexpected T_ENDWHILE in /home/betodl/public_html/alerta/index_other.php on line 1
+[02-Dec-2012 07:23:51] PHP Parse error:  syntax error, unexpected T_ENDWHILE in /home/betodl/public_html/alerta/index_other.php on line 1
+[02-Dec-2012 07:23:54] PHP Parse error:  syntax error, unexpected T_ENDWHILE in /home/betodl/public_html/alerta/index_other.php on line 1
+[02-Dec-2012 07:24:29] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/betodl/public_html/alerta/index_other.php on line 51
+[02-Dec-2012 07:24:37] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/betodl/public_html/alerta/index_other.php on line 51
+[02-Dec-2012 07:57:39] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/betodl/public_html/alerta/index_authority.php on line 52
+[02-Dec-2012 07:58:11] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/betodl/public_html/alerta/index_authority.php on line 52
+[06-Dec-2012 22:24:49] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'betodl_newuser'@'localhost' (using password: YES) in /home/pschuler/public_html/conexion.php on line 6
+[06-Dec-2012 22:24:49] PHP Warning:  mysql_select_db() [<a href='function.mysql-select-db'>function.mysql-select-db</a>]: Access denied for user 'pschuler'@'localhost' (using password: NO) in /home/pschuler/public_html/conexion.php on line 7
+[06-Dec-2012 22:24:49] PHP Warning:  mysql_select_db() [<a href='function.mysql-select-db'>function.mysql-select-db</a>]: A link to the server could not be established in /home/pschuler/public_html/conexion.php on line 7
+[06-Dec-2012 22:26:21] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/pschuler/public_html/login.php on line 9
+[06-Dec-2012 22:26:21] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home/pschuler/public_html/login.php on line 28
+[08-Dec-2012 07:40:47] PHP Parse error:  syntax error, unexpected T_ENCAPSED_AND_WHITESPACE, expecting T_STRING or T_VARIABLE or T_NUM_STRING in /home/pschuler/public_html/index_users.php on line 100
+[08-Dec-2012 08:44:56] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/pschuler/public_html/index_users.php on line 100
+[08-Dec-2012 08:45:22] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/pschuler/public_html/index_users.php on line 78
+[08-Dec-2012 08:45:22] PHP Parse error:  syntax error, unexpected $end, expecting ']' in /home/pschuler/public_html/index_users.php on line 78
+[08-Dec-2012 08:47:06] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/pschuler/public_html/index_users.php on line 100
+[08-Dec-2012 08:47:48] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/pschuler/public_html/index_users.php on line 78
+[08-Dec-2012 08:47:48] PHP Parse error:  syntax error, unexpected $end, expecting ']' in /home/pschuler/public_html/index_users.php on line 78
+[08-Dec-2012 08:48:26] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/pschuler/public_html/index_users.php on line 100
+[08-Dec-2012 08:48:38] PHP Parse error:  syntax error, unexpected $end in /home/pschuler/public_html/index_users.php on line 115
+[08-Dec-2012 08:48:47] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/pschuler/public_html/index_users.php on line 101
+[08-Dec-2012 08:48:50] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/pschuler/public_html/index_users.php on line 101

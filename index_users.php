@@ -3,7 +3,7 @@
 	require("validar_sesion.php");
 	
 /**
- * Devuelve la diferencia entre 2 fechas segÃºn los parÃ¡metros ingresados
+ * Devuelve la diferencia entre 2 fechas según los parámetros ingresados
  * @author Gerber Pacheco
  * @param string $fecha_principal Fecha Principal o Mayor
  * @param string $fecha_secundaria Fecha Secundaria o Menor
@@ -76,7 +76,7 @@ function success(position) {
   s.attr("class","success");
   
 	<?php if(!isset($_GET['latitude'])): ?>
-		window.location.href="index_other.php?latitude="+position.coords.latitude+"&your=true&longitude="+position.coords.longitude;
+		window.location.href="index_users.php?latitude="+position.coords.latitude+"&your=true&longitude="+position.coords.longitude;
     <?php endif; ?>
 	var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
 	var myOptions = {
@@ -97,22 +97,23 @@ function success(position) {
 	});
 	<?php
 		if(isset($_GET['latitude'])):
-		$query = mysql_query("SELECT *,3956 * 2 * ASIN(SQRT( POWER(SIN((".$_GET['latitude']." - dest.latitude) * pi()/180 / 2),2) + COS(".$_GET['latitude']." * pi()/180 ) * COS(dest.latitude *  pi()/180) * POWER(SIN((".$_GET['longitude']."-dest.longitude) *  pi()/180 / 2), 2) )) as distance FROM authority dest ORDER BY distance;");
+    $espacio = "";
+		$query = mysql_query("SELECT * FROM user where id <> 1 and id <> '{$_SESSION['uid']}' and latitude <> '{$espacio}' and longitude <> '{$espacio}' order by 1;");
 		$i = 0;
 		while($data = mysql_fetch_assoc($query)):
 		$i++;
 	?>
-	image = 'icons/<?php echo $data['authority_type_id'];?>.png';
+	image = 'icons/male-2.png';
 	latlng = new google.maps.LatLng(<?php echo $data['latitude']; ?>,<?php echo $data['longitude']; ?>);
 	var marker<?php echo $i; ?> = new google.maps.Marker({
 		position: latlng, 
 		map: map, 
-		title:"<?php echo $data['name']; ?> <?php echo $data['phone']; ?>",
+		title:"<?php echo $data['surname']." ".$data['firstname']; ?> <?php echo $data['username']; ?>",
 		icon:image
 	});
 	
 	var infowindow<?php echo $i; ?> = new google.maps.InfoWindow({
-		content: "<blockquote class='example-obtuse'><p><?php echo $data['name']; ?> <?php echo $data['phone']; ?></p></blockquote>"
+		content: "<blockquote class='example-obtuse'><p><?php echo $data['surname']." ".$data['firstname'];  ?> <?php echo $data['username']; ?></p></blockquote>"
 	});
 	
 	google.maps.event.addListener(marker<?php echo $i; ?>, "click", function() {
@@ -123,34 +124,6 @@ function success(position) {
 		endif;
 	?>
 
-	<?php
-		if(isset($_GET['latitude'])):
-		$query = mysql_query("SELECT *,dest.latitude,dest.longitude,3956 * 2 * ASIN(SQRT( POWER(SIN((".$_GET['latitude']." - dest.latitude) * pi()/180 / 2),2) + COS(".$_GET['latitude']." * pi()/180 ) * COS(dest.latitude *  pi()/180) * POWER(SIN((".$_GET['longitude']."-dest.longitude) *  pi()/180 / 2), 2) )) as distance FROM alert dest JOIN alert_type at ON dest.alert_type_id = at.id ORDER BY distance");
-		
-		while($data = mysql_fetch_assoc($query)):
-		$i++;
-	?>
-	image = 'icons/t_<?php echo $data['alert_type_id'];?>.png';
-	latlng = new google.maps.LatLng(<?php echo $data['latitude']; ?>,<?php echo $data['longitude']; ?>);
-	var marker<?php echo $i; ?> = new google.maps.Marker({
-		position: latlng, 
-		map: map, 
-		title:"<?php echo $data['description']; ?>",
-		icon:image
-	});
-	
-	var infowindow<?php echo $i; ?> = new google.maps.InfoWindow({
-		content: "<?php echo $data['description']; ?>"
-	});
-	
-	google.maps.event.addListener(marker<?php echo $i; ?>, "click", function() {
-		infowindow<?php echo $i; ?>.open(map, marker<?php echo $i; ?>);
-	});
-	
-	<?php
-		endwhile;
-		endif;
-	?>
 	google.maps.event.addDomListener(window, 'resize', function() {
 	var center = map.getCenter();
 	google.maps.event.trigger(map, "resize");
@@ -200,7 +173,7 @@ function alerta(tipo,latitud,longitud)
 <a href="#" class="nolink" onclick="alerta(2,<?php echo $_GET['latitude'];?>,<?php echo $_GET['longitude']; ?>)" >Policia</a><a href="#" title="Reportar Incidente a Policia" alt="Reportar Incidente a Policia"><img src="icons/policia2.png"  onclick="alerta(2,<?php echo $_GET['latitude'];?>,<?php echo $_GET['longitude']; ?>)" onmouseover="this.src='icons/policia3.png';" onmouseout="this.src='icons/policia2.png';" height="38px" width="38px" style="vertical-align: top;"/></a>
 <a href="#" class="nolink" onclick="alerta(1,<?php echo $_GET['latitude'];?>,<?php echo $_GET['longitude']; ?>)" >Ambulancia</a><a href="#" title="Reportar Incidente a Hospital" alt="Reportar Incidente a Hospital"><img src="icons/hospital2.png"  onclick="alerta(1,<?php echo $_GET['latitude'];?>,<?php echo $_GET['longitude']; ?>)" onmouseover="this.src='icons/hospital.png';" onmouseout="this.src='icons/hospital2.png';" height="38px" width="38px" style="vertical-align: top;"/></a>
 <a href="#" class="nolink" onclick="alerta(3,<?php echo $_GET['latitude'];?>,<?php echo $_GET['longitude']; ?>)" >Bomberos</a><a href="#" title="Reportar Incidente a Bomberos" alt="Reportar Incidente a Bomberos"><img src="icons/bombero2.png"  onclick="alerta(3,<?php echo $_GET['latitude'];?>,<?php echo $_GET['longitude']; ?>)" onmouseover="this.src='icons/bombero1.png';" onmouseout="this.src='icons/bombero2.png';" height="38px" width="38px" style="vertical-align: top;"/></a>
-<a href="index_users.php" class="nolink">Social</a><a href="index_users.php" title="Social" alt="Social"><img src="icons/imageW.png" onmouseover="this.src='icons/imageB.png';" onmouseout="this.src='icons/imageW.png';" height="38px" width="38px" style="vertical-align: top;"/></a>
+<a href="index_other.php" class="nolink">Alerta Ciudad</a><a href="index_other.php" title="Alerta Ciudad" alt="Alerta Ciudad"><img src="icons/imageAW.png"  onmouseover="this.src='icons/imageAB.png';" onmouseout="this.src='icons/imageAW.png';" height="38px" width="38px" style="vertical-align: top;"/></a>
 </div>
 <div style="float:right;margin-right:30px;">
 <a href="salir.php"><img src="images/exit.png" onmouseover="this.src='images/exit_light.png';" onmouseout="this.src='images/exit.png';" height="40" width="40"/></a>

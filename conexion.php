@@ -1,10 +1,10 @@
 <?php
 
 $host = 'localhost';
-$user = 'root';
-$pass = '';
+$user = 'pschuler_alerta';
+$pass = 'chiripazoalerta8a';
 $recurso = mysql_connect($host,$user,$pass);
-mysql_select_db("sac");
+mysql_select_db("pschuler_alertaciudad");
 
 if (!$recurso)
 {
